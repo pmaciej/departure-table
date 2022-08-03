@@ -2,8 +2,8 @@ import Moment from "react-moment";
 export const arrivalColumnsDesktop = [
   {
     dataField: "apname",
-    text:    "City",
-    sort: true
+    text: "City",
+    sort: true,
   },
   {
     dataField: "time",
@@ -17,8 +17,8 @@ export const arrivalColumnsDesktop = [
       }
     },
     formatter: (value, row) => {
-        return <Moment format="MM/DD | hh:mm" date={value} />;
-      }
+      return <Moment format="MM/DD | hh:mm" date={value} />;
+    },
   },
   {
     dataField: "alname",
@@ -65,35 +65,33 @@ export const arrivalColumnsDesktop = [
   },
 ];
 
-
-
 export const arrivalColumnsMedium = [
   {
     dataField: "apname",
     text: (
-        <div>
+      <div>
         City
         <br />
         Airline
         <br />
         Terminal
-      </div>),
+      </div>
+    ),
     sort: true,
-    formatter: (value, row, ) => {
-        return (
-          <div>
-            {row.apname}
-            <br />
-            {row.alname}
-            <br />T{row.terminal}
-          </div>
-        );
-    }
+    formatter: (value, row) => {
+      return (
+        <div>
+          {row.apname}
+          <br />
+          {row.alname}
+          <br />T{row.terminal}
+        </div>
+      );
+    },
   },
   {
     dataField: "time",
-    text: 
-    (
+    text: (
       <div>
         Time
         <br />
@@ -111,16 +109,16 @@ export const arrivalColumnsMedium = [
       }
     },
     formatter: (value, row, rowIndex, extraData) => {
-        return (
-          <div>
-            <Moment format="MM/DD | hh:mm" date={value} />
-            <br />
-            {row.fnr}
-            <br />
-            {row.status}
-          </div>
-        );
-      } 
+      return (
+        <div>
+          <Moment format="MM/DD | hh:mm" date={value} />
+          <br />
+          {row.fnr}
+          <br />
+          {row.status}
+        </div>
+      );
+    },
   },
   {
     dataField: "sched",
@@ -150,29 +148,29 @@ export const arrivalColumnsMobile = [
   {
     dataField: "apname",
     text: (
-        <div>
+      <div>
         City
         <br />
         Airline
         <br />
         Terminal
-      </div>),
+      </div>
+    ),
     sort: true,
-    formatter: (value, row, ) => {
-        return (
-          <div>
-            {row.apname}
-            <br />
-            {row.alname}
-            <br />T{row.terminal}
-          </div>
-        );
-    }
+    formatter: (value, row) => {
+      return (
+        <div>
+          {row.apname}
+          <br />
+          {row.alname}
+          <br />T{row.terminal}
+        </div>
+      );
+    },
   },
   {
     dataField: "time",
-    text:
-    (
+    text: (
       <div>
         Time
         <br />
@@ -190,15 +188,15 @@ export const arrivalColumnsMobile = [
       }
     },
     formatter: (value, row, rowIndex, extraData) => {
-        return (
-          <div>
-            <Moment format="MM/DD | hh:mm" date={value} />
-            <br />
-            {row.fnr}
-            <br />
-            {row.status}
-          </div>
-        );
-      } 
+      return (
+        <div>
+          <Moment format="MM/DD | hh:mm" date={value} />
+          <br />
+          {row.fnr}
+          <br />
+          {row.status}
+        </div>
+      );
+    },
   },
 ];

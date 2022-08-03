@@ -8,13 +8,12 @@ import ToolkitProvider, {
   Search,
 } from "react-bootstrap-table2-toolkit/dist/react-bootstrap-table2-toolkit";
 
-export default function Table({  data, columns  }) {
+export default function Table({ data, columns }) {
   const isMedium = useMediaQuery({ query: "(max-width: 1280px)" });
   const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
   const { SearchBar } = Search;
- 
 
-  if (data ) {
+  if (data) {
     return (
       <>
         <ToolkitProvider
@@ -26,7 +25,7 @@ export default function Table({  data, columns  }) {
           {(props) => (
             <div style={{ display: "flex", flexDirection: "column" }}>
               <SearchBar
-                className='searchBar'
+                className="searchBar"
                 placeholder="Search for flight"
                 {...props.searchProps}
                 style={{

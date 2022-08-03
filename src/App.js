@@ -1,9 +1,17 @@
 import "./App.css";
 import "react-bootstrap-table-next/dist/react-bootstrap-table2.min.css";
 import React, { useState, useEffect } from "react";
-import {Desktop, Medium, Mobile} from './responsive/responsive';
-import {departureColumnsDesktop, departureColumnsMedium, departureColumnsMobile} from './columns/departureColumns';
-import {arrivalColumnsDesktop, arrivalColumnsMedium, arrivalColumnsMobile} from './columns/arrivalColumns'
+import { Desktop, Medium, Mobile } from "./responsive/responsive";
+import {
+  departureColumnsDesktop,
+  departureColumnsMedium,
+  departureColumnsMobile,
+} from "./columns/departureColumns";
+import {
+  arrivalColumnsDesktop,
+  arrivalColumnsMedium,
+  arrivalColumnsMobile,
+} from "./columns/arrivalColumns";
 import {
   BrowserRouter as Router,
   Routes,
@@ -12,8 +20,6 @@ import {
   Navigate,
 } from "react-router-dom";
 import Table from "./Table";
-
-
 
 function App() {
   const [departures, setDepartures] = useState("");
@@ -39,7 +45,7 @@ function App() {
           .map((item, index) => ({
             ...item,
             time: item.schedDep,
-            index: index
+            index: index,
           }));
         const departures = tableData
           .filter((item) => item.schedArr !== undefined)
@@ -51,7 +57,7 @@ function App() {
         setDepartures(departures);
         setArrivals(arrivals);
       } catch (error) {
-        console.log("error", error);
+        alert("error", error);
       }
     };
 
@@ -99,30 +105,58 @@ function App() {
           <Route
             path="/departures"
             element={
-            <>
-            <Desktop>
-            <Table data={departures} showGate={true} columns={departureColumnsDesktop} />
-            </Desktop>
-            <Medium>
-            <Table data={departures} showGate={true} columns={departureColumnsMedium}/>
-            </Medium>
-            <Mobile>
-            <Table data={departures} showGate={true} columns={departureColumnsMobile}/>
-            </Mobile>
-            </>}
+              <>
+                <Desktop>
+                  <Table
+                    data={departures}
+                    showGate={true}
+                    columns={departureColumnsDesktop}
+                  />
+                </Desktop>
+                <Medium>
+                  <Table
+                    data={departures}
+                    showGate={true}
+                    columns={departureColumnsMedium}
+                  />
+                </Medium>
+                <Mobile>
+                  <Table
+                    data={departures}
+                    showGate={true}
+                    columns={departureColumnsMobile}
+                  />
+                </Mobile>
+              </>
+            }
           ></Route>
-          <Route path="/arrivals" element={
-            <>
-            <Desktop >
-            <Table data={arrivals} showGate={true} columns={arrivalColumnsDesktop} />
-            </Desktop>
-            <Medium>
-            <Table data={arrivals} showGate={true} columns={arrivalColumnsMedium}/>
-            </Medium>
-            <Mobile>
-            <Table data={arrivals} showGate={true} columns={arrivalColumnsMobile}/>
-            </Mobile>
-            </>}
+          <Route
+            path="/arrivals"
+            element={
+              <>
+                <Desktop>
+                  <Table
+                    data={arrivals}
+                    showGate={true}
+                    columns={arrivalColumnsDesktop}
+                  />
+                </Desktop>
+                <Medium>
+                  <Table
+                    data={arrivals}
+                    showGate={true}
+                    columns={arrivalColumnsMedium}
+                  />
+                </Medium>
+                <Mobile>
+                  <Table
+                    data={arrivals}
+                    showGate={true}
+                    columns={arrivalColumnsMobile}
+                  />
+                </Mobile>
+              </>
+            }
           ></Route>
         </Routes>
       </div>

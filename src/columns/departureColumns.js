@@ -2,8 +2,8 @@ import Moment from "react-moment";
 export const departureColumnsDesktop = [
   {
     dataField: "apname",
-    text:    "City",
-    sort: true
+    text: "City",
+    sort: true,
   },
   {
     dataField: "time",
@@ -17,8 +17,8 @@ export const departureColumnsDesktop = [
       }
     },
     formatter: (value, row) => {
-        return <Moment format="MM/DD | hh:mm" date={value} />;
-      }
+      return <Moment format="MM/DD | hh:mm" date={value} />;
+    },
   },
   {
     dataField: "alname",
@@ -37,7 +37,7 @@ export const departureColumnsDesktop = [
     formatter: (value, row) => `T${value}`,
   },
   {
-    dataField: "gate" ,
+    dataField: "gate",
     text: "Gate",
     sort: true,
   },
@@ -70,35 +70,33 @@ export const departureColumnsDesktop = [
   },
 ];
 
-
-
 export const departureColumnsMedium = [
   {
     dataField: "apname",
     text: (
-        <div>
+      <div>
         City
         <br />
         Airline
         <br />
         Terminal
-      </div>),
+      </div>
+    ),
     sort: true,
-    formatter: (value, row, ) => {
-        return (
-          <div>
-            {row.apname}
-            <br />
-            {row.alname}
-            <br />T{row.terminal}
-          </div>
-        );
-    }
+    formatter: (value, row) => {
+      return (
+        <div>
+          {row.apname}
+          <br />
+          {row.alname}
+          <br />T{row.terminal}
+        </div>
+      );
+    },
   },
   {
     dataField: "time",
-    text: 
-    (
+    text: (
       <div>
         Time
         <br />
@@ -116,19 +114,19 @@ export const departureColumnsMedium = [
       }
     },
     formatter: (value, row, rowIndex, extraData) => {
-        return (
-          <div>
-            <Moment format="MM/DD | hh:mm" date={value} />
-            <br />
-            {row.fnr}
-            <br />
-            {row.status}
-          </div>
-        );
-      } 
+      return (
+        <div>
+          <Moment format="MM/DD | hh:mm" date={value} />
+          <br />
+          {row.fnr}
+          <br />
+          {row.status}
+        </div>
+      );
+    },
   },
   {
-    dataField: "gate" ,
+    dataField: "gate",
     text: "Gate",
     sort: true,
   },
@@ -160,29 +158,29 @@ export const departureColumnsMobile = [
   {
     dataField: "apname",
     text: (
-        <div>
+      <div>
         City
         <br />
         Airline
         <br />
         Terminal
-      </div>),
+      </div>
+    ),
     sort: true,
-    formatter: (value, row, ) => {
-        return (
-          <div>
-            {row.apname}
-            <br />
-            {row.alname}
-            <br />T{row.terminal}
-          </div>
-        );
-    }
+    formatter: (value, row) => {
+      return (
+        <div>
+          {row.apname}
+          <br />
+          {row.alname}
+          <br />T{row.terminal}
+        </div>
+      );
+    },
   },
   {
     dataField: "time",
-    text:
-    (
+    text: (
       <div>
         Time
         <br />
@@ -200,15 +198,15 @@ export const departureColumnsMobile = [
       }
     },
     formatter: (value, row, rowIndex, extraData) => {
-        return (
-          <div>
-            <Moment format="MM/DD | hh:mm" date={value} />
-            <br />
-            {row.fnr} | {row.gate}
-            <br />
-            {row.status}
-          </div>
-        );
-      } 
-  }
+      return (
+        <div>
+          <Moment format="MM/DD | hh:mm" date={value} />
+          <br />
+          {row.fnr} | {row.gate}
+          <br />
+          {row.status}
+        </div>
+      );
+    },
+  },
 ];
