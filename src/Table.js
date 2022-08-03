@@ -1,16 +1,15 @@
 import React from "react";
 import BootstrapTable from "react-bootstrap-table-next";
 import "react-bootstrap-table2-toolkit/dist/react-bootstrap-table2-toolkit.min.css";
-import { useMediaQuery } from "react-responsive";
-import Moment from "react-moment";
+import filterFactory from "react-bootstrap-table2-filter";
+import "react-bootstrap-table2-filter/dist/react-bootstrap-table2-filter.min.css";
 import "moment-timezone";
 import ToolkitProvider, {
   Search,
 } from "react-bootstrap-table2-toolkit/dist/react-bootstrap-table2-toolkit";
 
 export default function Table({ data, columns }) {
-  const isMedium = useMediaQuery({ query: "(max-width: 1280px)" });
-  const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
+
   const { SearchBar } = Search;
 
   if (data) {
@@ -20,7 +19,7 @@ export default function Table({ data, columns }) {
           keyField="index"
           data={data}
           columns={columns}
-          search={{ searchFormatted: true }}
+          search
         >
           {(props) => (
             <div style={{ display: "flex", flexDirection: "column" }}>
@@ -34,6 +33,7 @@ export default function Table({ data, columns }) {
                 }}
               />
               <BootstrapTable
+                filter={filterFactory()}
                 striped
                 hover
                 condensed

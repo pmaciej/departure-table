@@ -26,6 +26,9 @@
   button{
       width: 100px;
   }
+  td{
+    white-space: pre-wrap!important;
+    }
 }
 
 

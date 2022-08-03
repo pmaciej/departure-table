@@ -1,4 +1,6 @@
 import Moment from "react-moment";
+import filterFactory, { textFilter } from 'react-bootstrap-table2-filter';
+import '../App.css'
 export const arrivalColumnsDesktop = [
   {
     dataField: "apname",
@@ -160,13 +162,15 @@ export const arrivalColumnsMobile = [
     formatter: (value, row) => {
       return (
         <div>
-          {row.apname}
-          <br />
-          {row.alname}
-          <br />T{row.terminal}
+        <strong>{row.apname}</strong>
+        <br />
+        {row.alname}
+        <br />
+        T{row.terminal}
         </div>
-      );
+      )
     },
+    filterValue: (cell, row) => row.apname
   },
   {
     dataField: "time",
@@ -192,11 +196,12 @@ export const arrivalColumnsMobile = [
         <div>
           <Moment format="MM/DD | hh:mm" date={value} />
           <br />
-          {row.fnr}
+          <strong>{row.fnr}</strong>
           <br />
           {row.status}
         </div>
       );
     },
+    filterValue: (cell, row) => row.fnr 
   },
 ];
